@@ -160,3 +160,22 @@ Reusables.Breakpoints = (function ($) {
   return Breakpoints;
 
 })(jQuery);
+
+if ( typeof jQuery !== 'undefined' ) {
+    jQuery(function ($) {
+        $('[data-breakpoints]').each(function(){
+            var $element = $(this), breakpoints, classPrefix;
+            var builder = Reusables.Breakpoints.on($element);
+            var prefix = $element.attr('data-breakpoints-class-prefix') || 'breakpoint';
+            var breakpoints = $.parseJSON($element.attr('data-breakpoints'));
+
+            if (!$.isPlainObject(breakpoints)) {
+                return;
+            }
+
+            $.each(breakpoints, function(name, range) {
+                builder.define(range, { name: prefix + "-" + name });
+            });
+        });
+    });
+}
