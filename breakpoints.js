@@ -1,3 +1,13 @@
+/*
+ * Breakpoints.js 0.0.10
+ * https://github.com/wvega/breakpoints.js
+ *
+ * Copyright 2014, Joshua Stoutenburg <jehoshua02@gmail.com>
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
 var Reusables = Reusables || {};
 Reusables.Breakpoints = (function ($) {
 
